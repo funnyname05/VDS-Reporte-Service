@@ -26,6 +26,8 @@ public class ReporteIncendio {
     private String direccion;
     private String sector;
     private String referencia;
+    private Double latitud;
+    private Double longitud;
 
     @Column(columnDefinition = "TEXT")
     private String observaciones;
@@ -44,6 +46,8 @@ public class ReporteIncendio {
         this.observaciones = datos.observaciones();
         this.estado = "ACTIVO";
         this.usuarioId = usuarioId;
+        this.latitud = datos.latitud();
+        this.longitud = datos.longitud();
     }
 
     public void actualizarEstado(String nuevoEstado) {

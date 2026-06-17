@@ -1,5 +1,6 @@
 package com.valledelsol.reporte.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,6 +12,7 @@ public record CrearReporteDTO(
         LocalDate fecha,
         
         @NotNull
+        @JsonFormat(pattern = "HH:mm[:ss]")
         LocalTime hora,
         
         @NotBlank
@@ -20,8 +22,11 @@ public record CrearReporteDTO(
         String sector,
         
         String referencia,
-        
-        @NotBlank
-        String observaciones
+
+        String observaciones,
+
+        Double latitud,    // ← agregar
+
+        Double longitud
 ) {
 }
