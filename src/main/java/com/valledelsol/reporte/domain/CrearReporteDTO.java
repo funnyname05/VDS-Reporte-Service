@@ -20,8 +20,11 @@ public record CrearReporteDTO(
         String sector,
         
         String referencia,
-        
-        @NotBlank
-        String observaciones
+
+        String observaciones,
+
+        Double latitud,    // ← agregar
+
+        Double longitud
 ) {
 }
